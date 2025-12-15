@@ -2,9 +2,9 @@ from fastapi import APIRouter, HTTPException, Depends, status
 from sqlalchemy.orm import Session
 from typing import List
 from datetime import datetime
-from app.models.models import Post, User
-from app.schemas.post import PostCreate, PostUpdate, PostResponse, PostWithOwner
-from app.dependencies import get_db
+from models.models import Post, User
+from schemas.post import PostCreate, PostUpdate, PostResponse, PostWithOwner
+from dependencies import get_db
 
 router = APIRouter(prefix="/posts", tags=["posts"])
 

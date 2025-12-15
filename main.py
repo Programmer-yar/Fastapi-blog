@@ -19,8 +19,8 @@
 # ============= app/main.py =============
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from app.database import engine, Base
-from app.routers import users, posts
+from utils.database import engine, Base
+from routers import users, post
 
 # Create tables
 Base.metadata.create_all(bind=engine)
@@ -41,7 +41,7 @@ app.add_middleware(
 
 # Include routers
 app.include_router(users.router)
-app.include_router(posts.router)
+app.include_router(post.router)
 
 
 @app.get("/")
